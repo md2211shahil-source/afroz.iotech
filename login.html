@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Alzheimer Voice Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='login.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- Background glow -->
+
+    <div class="ambient ambient-purple"></div>
+    <div class="ambient ambient-cyan"></div>
+
+
+    <main class="login-page">
+
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+
+        <section class="intro-section">
+
+
+            <div class="top-brand">
+
+                <span class="brand-dot"></span>
+
+                Alzheimer Voice Assistant
+
+            </div>
+
+
+            <div class="care-line">
+
+                Secure
+                <span>•</span>
+                Private
+                <span>•</span>
+                Always with you
+
+            </div>
+
+
+            <!-- REALISTIC BRAIN IMAGE -->
+
+            <div class="realistic-brain-background">
+
+                <img
+                    src="https://img.freepik.com/premium-photo/human-brain-with-multiple-rays-background_884546-1405.jpg">
+
+            </div>
+
+
+            <div class="intro-content">
+
+
+                <div class="mini-label">
+                    SMART CARE TECHNOLOGY
+                </div>
+
+
+                <h1>
+
+                    Alzheimer
+
+                    <br>
+
+                    <span>Voice Assistant</span>
+
+                </h1>
+
+
+                <p class="tagline">
+
+                    Smart reminder support for a safer
+                    <br>
+                    and easier daily life.
+
+                </p>
+
+
+                <!-- FEATURE 1 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon purple">
+                        🎤
+                    </div>
+
+                    <div class="feature-text">
+
+                        <h3>
+                            Voice Assistant
+                        </h3>
+
+                        <p>
+                            Speak naturally to create reminders.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <!-- FEATURE 2 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon cyan">
+                        🔔
+                    </div>
+
+                    <div class="feature-text">
+
+                        <h3>
+                            Smart Reminders
+                        </h3>
+
+                        <p>
+                            Never miss an important daily task.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <!-- FEATURE 3 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon purple">
+                        🛡️
+                    </div>
+
+                    <div class="feature-text">
+
+                        <h3>
+                            Safe & Reliable
+                        </h3>
+
+                        <p>
+                            Your information stays protected.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <!-- CARE MESSAGE -->
+
+                <div class="care-message">
+
+                    <div class="heart-icon">
+                        ♡
+                    </div>
+
+                    <div>
+
+                        <div>
+                            A little reminder
+                        </div>
+
+                        <div>
+                            A brighter day
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTTOM VALUES -->
+
+                <div class="values">
+
+                    <div>
+                        <strong>♡</strong>
+                        <span>Support</span>
+                    </div>
+
+                    <div>
+                        <strong>♧</strong>
+                        <span>Care</span>
+                    </div>
+
+                    <div>
+                        <strong>⌂</strong>
+                        <span>Independence</span>
+                    </div>
+
+                </div>
+
+
+                <div class="bottom-line">
+
+                    TOGETHER FOR A BETTER TOMORROW
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT LOGIN
+        ================================================== -->
+
+        <section class="login-section">
+
+
+            <div class="login-card">
+
+
+                <!-- REALISTIC BRAIN LOGO -->
+
+                <div class="login-brain-real">
+
+                    <div class="brain-ring ring-one"></div>
+
+                    <div class="brain-ring ring-two"></div>
+
+
+                    <img
+                        src="https://img.freepik.com/premium-photo/human-brain-with-multiple-rays-background_884546-1405.jpg">
+                    <span class="brain-light light-one"></span>
+
+                    <span class="brain-light light-two"></span>
+
+                    <span class="brain-light light-three"></span>
+
+                </div>
+
+
+                <h2>
+                    Welcome Back
+                </h2>
+
+
+                <p class="login-subtitle">
+
+                    Sign in to continue to your
+                    Voice Assistant.
+
+                </p>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="loginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            ✉️ &nbsp; Email Address
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span class="field-icon">
+                                ✉
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            🔒 &nbsp; Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span class="field-icon">
+                                🔒
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                            >
+                                👁️
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="login-options">
+
+                        <label class="remember-me">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                        <a
+                            href="#"
+                            id="forgotPassword"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <span>
+                            Login
+                        </span>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p id="loginMessage"></p>
+
+
+                </form>
+
+
+                <!-- DIVIDER -->
+
+                <div class="or-divider">
+
+                    <span></span>
+
+                    <p>or</p>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- SECURITY -->
+
+                <div class="security-box">
+
+                    <div class="security-icon">
+                        🛡️
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Secure Access
+                        </strong>
+
+                        <p>
+                            Your information is protected
+                            with secure authentication.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="login-footer">
+
+                    <strong>
+                        Alzheimer Voice Assistant
+                    </strong>
+
+                    <br>
+
+                    <span>
+                        Smart
+                        &nbsp;•&nbsp;
+                        Simple
+                        &nbsp;•&nbsp;
+                        Supportive
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+    <!-- =================================================
+     PROFILE SETUP POPUP
+================================================== -->
+
+<div class="profile-modal" id="profileModal">
+
+    <div class="profile-modal-card">
+
+        <button
+            type="button"
+            class="profile-close"
+            id="profileClose"
+        >
+            ×
+        </button>
+
+
+        <div class="profile-modal-brain">
+
+    <div class="profile-brain-glow"></div>
+
+    <img
+        src="https://img.freepik.com/premium-photo/human-brain-with-multiple-rays-background_884546-1405.jpg"
+        alt="Brain"
+    >
+
+</div>
+
+
+        <h2>
+            Complete Your Profile
+        </h2>
+
+
+        <p class="profile-modal-subtitle">
+            Tell us a little about yourself
+            to personalize your assistant.
+        </p>
+
+
+        <form id="profileForm">
+
+
+            <!-- FULL NAME -->
+
+            <div class="profile-form-group">
+
+                <label for="profileName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="profileName"
+                    name="name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="profile-form-group">
+
+                <label for="profileMobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="profileMobile"
+                    name="mobile"
+                    placeholder="Enter your mobile number"
+                    autocomplete="tel"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+
+            <!-- AGE -->
+
+            <div class="profile-form-group">
+
+                <label for="profileAge">
+                    Age
+                </label>
+
+                <input
+                    type="number"
+                    id="profileAge"
+                    name="age"
+                    placeholder="Enter your age"
+                    min="1"
+                    max="120"
+                    required
+                >
+
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div class="profile-form-group">
+
+                <label>
+                    Gender
+                </label>
+
+
+                <div class="gender-options">
+
+                    <label class="gender-option">
+
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="Male"
+                            required
+                        >
+
+                        <span>
+                            Male
+                        </span>
+
+                    </label>
+
+
+                    <label class="gender-option">
+
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="Female"
+                        >
+
+                        <span>
+                            Female
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="profile-continue-button"
+            >
+
+                <span>
+                    Continue to Dashboard
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+            <p
+                id="profileMessage"
+                class="profile-message"
+            ></p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+    <script
+        src="{{ url_for('static', filename='login.js') }}">
+    </script>
+
+</body>
+
+</html>

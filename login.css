@@ -1,0 +1,2059 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --bg: #020817;
+
+    --purple: #8061ff;
+
+    --purple-light: #a991ff;
+
+    --blue: #438cff;
+
+    --cyan: #2ee3d3;
+
+    --white: #ffffff;
+
+    --muted: #8f9fc6;
+
+}
+
+
+/* =================================================
+   BODY
+================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(55, 67, 255, 0.18),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(20, 220, 208, 0.12),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #010510,
+            #041438 55%,
+            #021526
+        );
+}
+
+
+/* =================================================
+   AMBIENT LIGHT
+================================================= */
+
+.ambient {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(100px);
+
+}
+
+
+.ambient-purple {
+
+    width: 350px;
+    height: 350px;
+
+    left: -150px;
+    top: 25%;
+
+    background:
+        rgba(94, 66, 255, 0.15);
+
+}
+
+
+.ambient-cyan {
+
+    width: 330px;
+    height: 330px;
+
+    right: -130px;
+    bottom: -100px;
+
+    background:
+        rgba(24, 213, 201, 0.12);
+
+}
+
+
+/* =================================================
+   MAIN
+================================================= */
+
+.login-page {
+
+    width: 100%;
+
+    max-width: 1500px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr 0.92fr;
+
+}
+
+
+/* =================================================
+   LEFT SIDE
+================================================= */
+
+.intro-section {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        38px 65px;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.top-brand {
+
+    position: absolute;
+
+    top: 31px;
+    left: 65px;
+
+    z-index: 20;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+
+.brand-dot {
+
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    margin-right: 9px;
+
+    border-radius: 50%;
+
+    background: #ff6c80;
+
+    box-shadow:
+        0 0 15px #ff6c80;
+
+}
+
+
+.care-line {
+
+    position: absolute;
+
+    right: 38px;
+    top: 33px;
+
+    z-index: 20;
+
+    color: #7f91b9;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.care-line span {
+
+    color: var(--purple-light);
+
+    padding: 0 6px;
+
+}
+
+
+/* =================================================
+   REALISTIC BACKGROUND BRAIN
+================================================= */
+
+.realistic-brain-background {
+
+    position: absolute;
+
+    width: 700px;
+    height: 670px;
+
+    right: -350px;
+    top: 60%;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 1;
+
+    pointer-events: none;
+
+}
+
+
+
+
+
+.realistic-brain-background img {
+
+    width: 50%;
+    height: 50%;
+
+    object-fit: cover;
+
+    opacity: 0.20;
+
+    mix-blend-mode: screen;
+
+    filter:
+        saturate(1.4)
+        hue-rotate(155deg)
+        contrast(1.2)
+        brightness(0.90);
+
+    border-radius: 50%;
+
+    animation:
+        backgroundBrain 8s ease-in-out infinite;
+
+}
+
+
+@keyframes backgroundBrain {
+
+    0%,
+    100% {
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            scale(1.035)
+            translateY(-8px);
+    }
+
+}
+
+
+/* =================================================
+   LEFT CONTENT
+================================================= */
+
+.intro-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 600px;
+
+    margin-top: 60px;
+
+}
+
+
+.mini-label {
+
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    padding:
+        7px 13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(83, 92, 255, 0.09);
+
+    border:
+        1px solid rgba(121, 105, 255, 0.22);
+
+    color: #8e9bff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.intro-section h1 {
+
+    font-size:
+        clamp(48px, 5vw, 72px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.intro-section h1 span {
+
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff,
+            #a58aff,
+            #35ded2
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.tagline {
+
+    color: #94a4cb;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-bottom: 27px;
+
+}
+
+
+/* =================================================
+   FEATURE CARDS
+================================================= */
+
+.feature-card {
+
+    width: 540px;
+
+    min-height: 70px;
+
+    margin-bottom: 11px;
+
+    padding:
+        10px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(20, 45, 98, 0.78),
+            rgba(7, 25, 64, 0.50)
+        );
+
+    border:
+        1px solid rgba(92, 128, 226, 0.20);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,0.04);
+
+    backdrop-filter:
+        blur(14px);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateX(8px);
+
+    border-color:
+        rgba(125, 96, 255, 0.55);
+
+    box-shadow:
+        0 15px 40px rgba(44, 65, 160, 0.20);
+
+}
+
+
+.feature-icon {
+
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 21px;
+
+}
+
+
+.feature-icon.purple {
+
+    background:
+        rgba(116, 80, 255, 0.25);
+
+    border:
+        1px solid rgba(142, 111, 255, 0.35);
+
+    box-shadow:
+        0 0 25px rgba(112, 76, 255, 0.18);
+
+}
+
+
+.feature-icon.cyan {
+
+    background:
+        rgba(33, 219, 207, 0.18);
+
+    border:
+        1px solid rgba(39, 224, 211, 0.30);
+
+    box-shadow:
+        0 0 25px rgba(31, 220, 208, 0.15);
+
+}
+
+
+.feature-text {
+
+    flex: 1;
+
+}
+
+
+.feature-text h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.feature-text p {
+
+    color: #8192bb;
+
+    font-size: 11px;
+
+}
+
+
+.feature-arrow {
+
+    color: #91a8ee;
+
+    font-size: 25px;
+
+}
+
+
+/* =================================================
+   CARE MESSAGE
+================================================= */
+
+.care-message {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 18px;
+
+    color: #8392b8;
+
+}
+
+
+.heart-icon {
+
+    color: #9b82ff;
+
+    font-size: 38px;
+
+}
+
+
+.care-message div {
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+
+}
+
+
+/* =================================================
+   VALUES
+================================================= */
+
+.values {
+
+    display: flex;
+
+    gap: 60px;
+
+    margin-top: 13px;
+
+    margin-left: 170px;
+
+}
+
+
+.values div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+
+}
+
+
+.values strong {
+
+    color: #9185ff;
+
+    font-size: 24px;
+
+}
+
+
+.values span {
+
+    color: #7e8db3;
+
+    font-size: 10px;
+
+}
+
+
+.bottom-line {
+
+    width: 330px;
+
+    margin-left: 165px;
+
+    margin-top: 9px;
+
+    padding-top: 8px;
+
+    border-top:
+        1px solid rgba(128, 103, 255, 0.42);
+
+    text-align: center;
+
+    color: #7888ae;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =================================================
+   RIGHT
+================================================= */
+
+.login-section {
+
+    min-height: 100vh;
+
+    padding:
+        40px 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =================================================
+   LOGIN CARD
+================================================= */
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding:
+        28px 40px 26px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 40, 87, 0.84),
+            rgba(5, 18, 46, 0.94)
+        );
+
+    border:
+        1px solid rgba(109, 139, 255, 0.46);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,0.52),
+        0 0 60px rgba(85, 66, 255, 0.10),
+        inset 0 1px rgba(255,255,255,0.07);
+
+    backdrop-filter:
+        blur(24px);
+
+}
+
+
+.login-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    top: -150px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(112, 74, 255, 0.16);
+
+    filter:
+        blur(60px);
+
+}
+
+
+/* =================================================
+   REALISTIC LOGIN BRAIN
+================================================= */
+
+.login-brain-real {
+
+    width: 155px;
+    height: 115px;
+
+    margin:
+        0 auto 3px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.login-brain-real img {
+
+    width: 105px;
+    height: 88px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    z-index: 5;
+
+    opacity: 0.95;
+
+    mix-blend-mode: screen;
+
+    filter:
+        saturate(1.6)
+        hue-rotate(165deg)
+        contrast(1.2)
+        brightness(1.1);
+
+    animation:
+        loginBrainFloat 3.2s ease-in-out infinite;
+
+}
+
+
+@keyframes loginBrainFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(2deg);
+    }
+
+}
+
+
+/* =================================================
+   BRAIN ORBITS
+================================================= */
+
+.brain-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.ring-one {
+
+    width: 145px;
+    height: 45px;
+
+    border:
+        1px solid rgba(43, 225, 214, 0.65);
+
+    box-shadow:
+        0 0 14px rgba(43, 225, 214, 0.25);
+
+    animation:
+        ringOne 4s linear infinite;
+
+}
+
+
+.ring-two {
+
+    width: 110px;
+    height: 75px;
+
+    border:
+        1px solid rgba(135, 99, 255, 0.60);
+
+    animation:
+        ringTwo 5s linear infinite;
+
+}
+
+
+@keyframes ringOne {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes ringTwo {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+/* =================================================
+   BRAIN LIGHTS
+================================================= */
+
+.brain-light {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #35e2d2;
+
+    box-shadow:
+        0 0 14px #35e2d2;
+
+    z-index: 10;
+
+    animation:
+        lightPulse 1.5s ease-in-out infinite alternate;
+
+}
+
+
+.light-one {
+
+    top: 12px;
+    right: 12px;
+
+}
+
+
+.light-two {
+
+    bottom: 12px;
+    left: 16px;
+
+    background: #9b7dff;
+
+    box-shadow:
+        0 0 14px #9b7dff;
+
+}
+
+
+.light-three {
+
+    top: 45px;
+    left: 2px;
+
+}
+
+
+@keyframes lightPulse {
+
+    from {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+}
+
+
+/* =================================================
+   LOGIN TITLE
+================================================= */
+
+.login-card h2 {
+
+    text-align: center;
+
+    font-size: 35px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.login-subtitle {
+
+    text-align: center;
+
+    color: #91a1c6;
+
+    font-size: 13px;
+
+    margin-bottom: 27px;
+
+}
+
+
+/* =================================================
+   FORM
+================================================= */
+
+.form-group {
+
+    margin-bottom: 17px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    color: #dce5f8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+
+}
+
+
+.input-wrapper {
+
+    position: relative;
+
+}
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 51px;
+
+    padding:
+        0 46px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid #304674;
+
+    background:
+        rgba(8, 24, 56, 0.82);
+
+    color: white;
+
+    outline: none;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.input-wrapper input::placeholder {
+
+    color: #667799;
+
+}
+
+
+.input-wrapper input:focus {
+
+    border-color:
+        #8b70ff;
+
+    box-shadow:
+        0 0 0 3px rgba(126, 95, 255, 0.11);
+
+}
+
+
+.field-icon {
+
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color: #91a3ca;
+
+    z-index: 2;
+
+}
+
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 7px;
+
+    top: 7px;
+
+    width: 37px;
+    height: 37px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+}
+
+
+.password-toggle:hover {
+
+    background:
+        rgba(255,255,255,0.07);
+
+}
+
+
+/* =================================================
+   OPTIONS
+================================================= */
+
+.login-options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin:
+        3px 0 20px;
+
+    font-size: 12px;
+
+}
+
+
+.remember-me {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #8998bb;
+
+}
+
+
+.remember-me input {
+
+    width: 15px;
+    height: 15px;
+
+    accent-color:
+        #7958ff;
+
+}
+
+
+.login-options a {
+
+    color:
+        #9b82ff;
+
+    text-decoration: none;
+
+}
+
+
+/* =================================================
+   LOGIN BUTTON
+================================================= */
+
+.login-button {
+
+    width: 100%;
+
+    height: 53px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #6546ed,
+            #8163ff,
+            #6094ff
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 12px 32px rgba(99, 68, 238, 0.35);
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.login-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 18px 42px rgba(101, 70, 240, 0.50);
+
+}
+
+
+.login-button .arrow {
+
+    font-size: 22px;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.login-button:hover .arrow {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+#loginMessage {
+
+    min-height: 16px;
+
+    text-align: center;
+
+    margin-top: 9px;
+
+    font-size: 12px;
+
+}
+
+
+/* =================================================
+   DIVIDER
+================================================= */
+
+.or-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin:
+        17px 0;
+
+}
+
+
+.or-divider span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(113, 133, 184, 0.30);
+
+}
+
+
+.or-divider p {
+
+    color: #71809f;
+
+    font-size: 12px;
+
+}
+
+
+/* =================================================
+   SECURITY
+================================================= */
+
+.security-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        13px 15px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(34, 211, 199, 0.07);
+
+    border:
+        1px solid rgba(42, 218, 205, 0.18);
+
+}
+
+
+.security-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(37, 220, 208, 0.12);
+
+}
+
+
+.security-box strong {
+
+    display: block;
+
+    color: #38dfd0;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.security-box p {
+
+    color: #8191b1;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
+}
+
+
+/* =================================================
+   FOOTER
+================================================= */
+
+.login-footer {
+
+    text-align: center;
+
+    margin-top: 17px;
+
+    color: #647391;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+
+.login-footer strong {
+
+    color: #9aa7c5;
+
+    font-size: 11px;
+
+}
+
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 1050px) {
+
+    .login-page {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .intro-section {
+
+        min-height: auto;
+
+        padding:
+            100px 40px 40px;
+
+    }
+
+
+    .login-section {
+
+        min-height: auto;
+
+        padding:
+            30px 40px 70px;
+
+    }
+
+
+    .realistic-brain-background {
+
+        opacity: 0.5;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .top-brand {
+
+        left: 20px;
+
+        font-size: 14px;
+
+    }
+
+
+    .care-line {
+
+        display: none;
+
+    }
+
+
+    .intro-section {
+
+        padding:
+            85px 20px 30px;
+
+    }
+
+
+    .intro-section h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .feature-card {
+
+        width: 100%;
+
+    }
+
+
+    .values {
+
+        margin-left: 0;
+
+        justify-content: center;
+
+    }
+
+
+    .bottom-line {
+
+        width: 100%;
+
+        margin-left: 0;
+
+    }
+
+
+    .login-section {
+
+        padding:
+            20px 15px 45px;
+
+    }
+
+
+    .login-card {
+
+        padding:
+            25px 20px;
+
+    }
+
+}
+/* =================================================
+   PROFILE SETUP MODAL
+================================================= */
+
+.profile-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(3, 7, 22, 0.72);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Modal visible */
+
+.profile-modal.show {
+    display: flex;
+
+    animation: profileModalFade 0.3s ease;
+}
+
+
+@keyframes profileModalFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =================================================
+   MODAL CARD
+================================================= */
+
+.profile-modal-card {
+
+    position: relative;
+
+    width: 440px;
+
+    max-width: 100%;
+
+    padding: 30px 34px 32px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19, 28, 65, 0.96),
+            rgba(8, 15, 39, 0.97)
+        );
+
+    border: 1px solid
+        rgba(111, 139, 255, 0.24);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 55px
+        rgba(80, 78, 255, 0.15);
+
+    overflow: hidden;
+
+    animation: profileCardIn 0.4s ease;
+}
+
+
+@keyframes profileCardIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =================================================
+   TOP GLOW
+================================================= */
+
+.profile-modal-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 160px;
+
+    top: -90px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(72, 120, 255, 0.28),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =================================================
+   CLOSE BUTTON
+================================================= */
+
+.profile-close {
+
+    position: absolute;
+
+    top: 15px;
+    right: 17px;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid
+        rgba(140, 155, 220, 0.18);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: #aeb9d8;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+
+.profile-close:hover {
+
+    color: white;
+
+    background:
+        rgba(239, 82, 112, 0.18);
+
+    border-color:
+        rgba(239, 82, 112, 0.4);
+}
+
+
+/* =================================================
+   REALISTIC BRAIN
+================================================= */
+
+.profile-modal-brain {
+
+    position: relative;
+
+    width: 105px;
+    height: 85px;
+
+    margin: 0 auto 5px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile-modal-brain img {
+
+    position: relative;
+
+    width: 105px;
+    height: 85px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    mix-blend-mode: screen;
+
+    opacity: 0.92;
+
+    filter:
+        saturate(1.5)
+        hue-rotate(150deg)
+        brightness(1.15)
+        contrast(1.08);
+
+    z-index: 2;
+
+    animation: profileBrainFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes profileBrainFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* Brain glow */
+
+.profile-brain-glow {
+
+    position: absolute;
+
+    width: 105px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(0, 218, 255, 0.42),
+            rgba(108, 72, 255, 0.18),
+            transparent 70%
+        );
+
+    filter: blur(14px);
+
+    z-index: 1;
+
+    animation: brainGlow 2.5s infinite;
+}
+
+
+@keyframes brainGlow {
+
+    0%,
+    100% {
+        opacity: 0.65;
+        transform: scale(0.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+
+/* =================================================
+   MODAL HEADING
+================================================= */
+
+.profile-modal-card h2 {
+
+    position: relative;
+
+    text-align: center;
+
+    margin-top: 3px;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+
+.profile-modal-subtitle {
+
+    text-align: center;
+
+    margin: 8px auto 22px;
+
+    max-width: 310px;
+
+    color: #8f9bc1;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =================================================
+   PROFILE FORM
+================================================= */
+
+.profile-form-group {
+
+    margin-bottom: 16px;
+}
+
+
+.profile-form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #d6dcf0;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.profile-form-group input {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    color: white;
+
+    background:
+        rgba(20, 31, 68, 0.78);
+
+    border: 1px solid
+        rgba(101, 123, 211, 0.22);
+
+    font-size: 12px;
+
+    transition: 0.25s;
+}
+
+
+.profile-form-group input::placeholder {
+
+    color: #68759d;
+}
+
+
+.profile-form-group input:focus {
+
+    border-color:
+        rgba(40, 211, 230, 0.7);
+
+    background:
+        rgba(22, 36, 78, 0.9);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(40, 211, 230, 0.07),
+
+        0 0 22px
+        rgba(40, 211, 230, 0.08);
+}
+
+
+/* =================================================
+   GENDER
+================================================= */
+
+.gender-options {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.gender-option {
+
+    height: 46px;
+
+    margin: 0 !important;
+
+    padding: 0 14px;
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(20, 31, 68, 0.78);
+
+    border: 1px solid
+        rgba(101, 123, 211, 0.22);
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.gender-option:hover {
+
+    border-color:
+        rgba(40, 211, 230, 0.4);
+}
+
+
+.gender-option input {
+
+    width: auto;
+
+    height: auto;
+
+    accent-color: #25d5c0;
+}
+
+
+.gender-option span {
+
+    color: #b9c3df;
+
+    font-size: 12px;
+}
+
+
+/* =================================================
+   CONTINUE BUTTON
+================================================= */
+
+.profile-continue-button {
+
+    width: 100%;
+
+    height: 49px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            100deg,
+            #7655ff,
+            #19cfd5
+        );
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(75, 105, 255, 0.18);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.profile-continue-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 35px
+        rgba(75, 105, 255, 0.3);
+}
+
+
+.profile-continue-button span:last-child {
+
+    font-size: 19px;
+}
+
+
+/* =================================================
+   ERROR / SUCCESS MESSAGE
+================================================= */
+
+.profile-message {
+
+    min-height: 18px;
+
+    margin-top: 9px;
+
+    text-align: center;
+
+    color: #ff7187;
+
+    font-size: 11px;
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 520px) {
+
+    .profile-modal-card {
+
+        padding:
+            25px 20px 24px;
+
+        border-radius: 22px;
+    }
+
+    .profile-modal-brain {
+
+        width: 90px;
+        height: 75px;
+    }
+
+    .profile-modal-brain img {
+
+        width: 90px;
+        height: 75px;
+    }
+
+    .profile-brain-glow {
+
+        width: 90px;
+        height: 65px;
+    }
+
+    .profile-modal-card h2 {
+
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Alzheimer Voice Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='dashboard.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     FIXED MENU BUTTON
+     ========================================================= -->
+
+<button
+    type="button"
+    class="sidebar-toggle"
+    id="sidebarToggle"
+    aria-label="Toggle Menu"
+    title="Menu"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+
+<!-- =========================================================
+     ALWAYS VISIBLE BRAND
+     ========================================================= -->
+
+<div class="compact-brand">
+
+    <div class="compact-brand-brain">
+        🧠
+    </div>
+
+    <div>
+
+        <strong>
+            Alzheimer
+        </strong>
+
+        <span>
+            Voice Assistant
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     APP
+     ========================================================= -->
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+         ====================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-brain">
+                🧠
+            </div>
+
+            <div class="brand-text">
+
+                <h2>
+                    Alzheimer
+                </h2>
+
+                <span>
+                    Voice Assistant
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================== -->
+
+        <nav class="nav">
+
+
+            <!-- HOME -->
+
+            <a
+                href="#"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+
+            <!-- REMINDERS -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🔔
+                </span>
+
+                <span>
+                    Reminders
+                </span>
+
+            </a>
+
+
+            <!-- DAILY SCHEDULE -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Daily Schedule
+                </span>
+
+            </a>
+
+
+            <!-- MEMORY SUPPORT -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🧠
+                </span>
+
+                <span>
+                    Memory Support
+                </span>
+
+            </a>
+
+
+            <!-- HEALTH -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ♥
+                </span>
+
+                <span>
+                    Health
+                </span>
+
+            </a>
+
+
+            <!-- CHAT WITH AI -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ☁
+                </span>
+
+                <span>
+                    Chat with AI
+                </span>
+
+            </a>
+
+
+            <!-- =================================================
+                 SETTINGS + LOGOUT
+                 ================================================== -->
+
+            <div class="settings-section">
+
+
+                <!-- SETTINGS -->
+
+                <a
+                    href="#"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    type="button"
+                    class="nav-item logout-item"
+                    id="logoutButton"
+                >
+
+                    <span class="nav-icon">
+                        ↪
+                    </span>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- ABOUT -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⓘ
+                </span>
+
+                <span>
+                    About
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             USER PROFILE
+             ================================================== -->
+
+        <div class="profile-card">
+
+
+            <div
+                class="avatar"
+                id="userAvatar"
+            >
+                U
+            </div>
+
+
+            <div class="profile-info">
+
+                <strong id="sidebarUserName">
+                    User
+                </strong>
+
+                <small>
+                    Care Profile
+                </small>
+
+            </div>
+
+
+            <div class="profile-arrow">
+                ›
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             SYSTEM STATUS
+             ================================================== -->
+
+        <div class="system-status">
+
+            <h4>
+                System Status
+            </h4>
+
+
+            <p>
+
+                <span class="status-dot"></span>
+
+                All systems working
+
+            </p>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             TOP BAR
+             ================================================== -->
+
+        <div class="topbar">
+
+
+            <div class="welcome">
+
+                <h1>
+
+                    Good Morning,
+                    <span id="dashboardUserName">
+                        User
+                    </span>!
+                    👋
+
+                </h1>
+
+
+                <p>
+                    I'm here to help you stay on track today.
+                </p>
+
+            </div>
+
+
+            <!-- VOICE MODE -->
+
+            <button
+                type="button"
+                class="voice-mode-toggle active"
+                id="voiceModeToggle"
+            >
+
+                <span class="mic-small">
+                    🎙
+                </span>
+
+
+                <span id="voiceModeText">
+                    Voice Mode ON
+                </span>
+
+
+                <span class="voice-toggle-switch"></span>
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =================================================
+             STAT CARDS
+             ================================================== -->
+
+        <section class="stats">
+
+
+            <!-- TODAY -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📅
+                </div>
+
+
+                <div class="stat-content">
+
+                    <small>
+                        Today
+                    </small>
+
+
+                    <strong id="todayDate">
+                        Loading...
+                    </strong>
+
+
+                    <span id="todayDay">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CURRENT TIME -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ◷
+                </div>
+
+
+                <div class="stat-content">
+
+                    <small>
+                        Current Time
+                    </small>
+
+
+                    <strong id="currentTime">
+                        Loading...
+                    </strong>
+
+
+                    <span>
+                        Live
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEXT REMINDER -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    🔔
+                </div>
+
+
+                <div class="stat-content">
+
+                    <small>
+                        Next Reminder
+                    </small>
+
+
+                    <strong id="nextReminder">
+                        No reminder
+                    </strong>
+
+
+                    <span id="nextReminderTime">
+                        --
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DAILY TASKS -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon red">
+                    ✓
+                </div>
+
+
+                <div class="stat-content">
+
+                    <small>
+                        Daily Tasks
+                    </small>
+
+
+                    <strong id="taskCount">
+                        0 / 0
+                    </strong>
+
+
+                    <span>
+                        Completed
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             MAIN CONTENT GRID
+             ================================================== -->
+
+        <section class="content-grid">
+
+
+            <!-- =================================================
+                 VOICE ASSISTANT
+                 ================================================== -->
+
+            <div
+                class="panel voice-panel"
+                id="voicePanel"
+            >
+
+
+                <div
+                    class="listening"
+                    id="voiceStatus"
+                >
+                    Ready to listen
+                </div>
+
+
+                <!-- SOUND WAVE -->
+
+                <div class="sound-wave">
+
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+
+                </div>
+
+
+                <!-- MICROPHONE -->
+
+                <button
+                    class="voice-circle"
+                    id="voiceButton"
+                    type="button"
+                    title="Start Voice Assistant"
+                >
+                    🎙
+                </button>
+
+
+                <!-- HELP -->
+
+                <div class="voice-help">
+
+                    Speak or type what you want
+                    me to remember
+
+                </div>
+
+
+                <!-- TEXT INPUT -->
+
+                <div class="text-input-area">
+
+
+                    <input
+                        type="text"
+                        id="reminderInput"
+                        class="reminder-input"
+                        placeholder="Type your reminder here..."
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="sendReminderButton"
+                        class="send-reminder-button"
+                        title="Send Reminder"
+                    >
+                        ➤
+                    </button>
+
+
+                </div>
+
+
+                <!-- EXAMPLES -->
+
+                <div class="example">
+
+                    "Remind me to take medicine at 2 PM"
+
+                </div>
+
+
+                <div class="example">
+
+                    "Remind me to go for a walk at 6 PM"
+
+                </div>
+
+
+                <div class="example">
+
+                    "Remind me to drink water at 5 PM"
+
+                </div>
+
+
+                <!-- MIC HINT -->
+
+                <div
+                    class="mic-hint"
+                    id="inputHint"
+                >
+
+                    🎙 Press the microphone
+                    or type your reminder
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 TODAY'S SCHEDULE
+                 ================================================== -->
+
+            <div class="panel schedule-panel">
+
+
+                <div class="panel-title">
+
+                    <h3>
+                        Today's Schedule
+                    </h3>
+
+
+                    <span
+                        class="view-all"
+                        id="viewAll"
+                    >
+                        View All ›
+                    </span>
+
+                </div>
+
+
+                <!-- SCROLLABLE LIST -->
+
+                <div
+                    class="schedule-list"
+                    id="scheduleList"
+                >
+
+                    <div class="schedule-item">
+
+
+                        <div class="task-icon">
+                            🕐
+                        </div>
+
+
+                        <div class="task-info">
+
+                            <strong>
+                                Loading reminders...
+                            </strong>
+
+
+                            <small>
+                                Please wait
+                            </small>
+
+                        </div>
+
+
+                        <div class="task-time">
+                            --
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             BOTTOM GRID
+             ================================================== -->
+
+        <section class="bottom-grid">
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="panel quick-panel">
+
+
+                <div class="panel-title">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <button
+                        class="quick"
+                        id="addReminderButton"
+                        type="button"
+                    >
+
+                        <div class="quick-icon">
+                            🔔
+                        </div>
+
+                        <span>
+                            Add Reminder
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="quick"
+                        id="voiceNoteButton"
+                        type="button"
+                    >
+
+                        <div class="quick-icon">
+                            🎙
+                        </div>
+
+                        <span>
+                            Voice Note
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="quick"
+                        id="emergencyButton"
+                        type="button"
+                    >
+
+                        <div class="quick-icon">
+                            ☎
+                        </div>
+
+                        <span>
+                            Emergency
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="quick"
+                        id="familyButton"
+                        type="button"
+                    >
+
+                        <div class="quick-icon">
+                            👥
+                        </div>
+
+                        <span>
+                            Family Call
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="quick"
+                        id="reportButton"
+                        type="button"
+                    >
+
+                        <div class="quick-icon">
+                            📊
+                        </div>
+
+                        <span>
+                            Daily Report
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- AI ASSISTANT -->
+
+            <div class="panel ai-panel">
+
+
+                <div class="ai-title">
+
+                    <b>
+                        ❝
+                    </b>
+
+                    <span>
+                        AI Assistant Says
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="ai-message"
+                    id="aiMessage"
+                >
+
+                    Hello! I'm here to help you
+                    remember your important tasks.
+
+                </div>
+
+
+                <div class="robot">
+                    🤖
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             REMINDER PLAYER
+             ================================================== -->
+
+        <div class="player">
+
+
+            <div class="speaker">
+                🔊
+            </div>
+
+
+            <div class="player-text">
+
+
+                <strong id="playerMessage">
+                    Your reminders will appear here.
+                </strong>
+
+
+                <span id="playerStatus">
+                    Voice assistant ready
+                </span>
+
+
+            </div>
+
+
+            <div class="player-side">
+                |◀
+            </div>
+
+
+            <button
+                class="player-button"
+                id="playerButton"
+                type="button"
+            >
+                ▶
+            </button>
+
+
+            <div class="player-side">
+                ▶|
+            </div>
+
+
+            <div
+                class="player-side"
+                id="closePlayer"
+            >
+                ⓧ
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script
+    src="{{ url_for('static', filename='dashboard.js') }}"
+></script>
+
+
+</body>
+
+</html>
